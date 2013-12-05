@@ -175,9 +175,9 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
         $merID = $merchID; //商户号为固定	
         $orderid = $order->getRealOrderId();
         $orderDate = date('Ymd',strtotime($order->getCreatedAt()));
-        $orderTime =  date('hjs',strtotime($order->getCreatedAt()));
+        $orderTime = date('his',strtotime($order->getCreatedAt()));
         $tranType = '0';
-        $amount = sprintf('%.2f', $logistics_fees)*100;
+        $amount =sprintf('%.2f', $converted_final_price);
         $curType = 'CNY';
         $orderContent = $order->getRealOrderId();
         $orderMono = $order->getRealOrderId();
@@ -209,7 +209,7 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
         $retMsg="";
         //
         if (!$fp) {
-            echo "$errstr ($errno)<br />\n";
+            $this->logTrans($errno,$errno);
         } else 
         {
             $in  = "<?xml version='1.0' encoding='UTF-8'?>";
@@ -239,8 +239,7 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
 
         $orderUrl = $dom->getElementsByTagName('orderUrl');
         $orderUrl_value = $orderUrl->item(0)->nodeValue;
-        echo "retMsg=".$retMsg;
-        echo $retCode_value." ".$errMsg_value." ".$signMsg_value." ".$orderUrl_value;
+        $this->logTrans( $retCode_value." ".$errMsg_value." ".$signMsg_value." ".$orderUrl_value,$retCode_value);
 
         if($retCode_value != "0"){
             $this->logTrans($errMsg_value,$retCode_value);
@@ -250,8 +249,8 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
          
         
         $parameter = array(
-                           'merchID'        => $merchID,//
                            'interfaceVersion'        => $interfaceVersion,//
+                           'merchID'        => $merchID,//
                            'orderid'           => $orderid, //
                            'orderDate'              => $orderDate,//
                            'orderTime'      => $orderTime, //
