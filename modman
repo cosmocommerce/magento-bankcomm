@@ -1,0 +1,11 @@
+code                                   app/code/community/CosmoCommerce/Bankcomm
+frontend/template      app/design/frontend/base/default/template/bankcomm
+frontend/layout/bankcomm.xml      app/design/frontend/base/default/layout/bankcomm.xml
+locale/zh_CN/CosmoCommerce_Bankcomm.csv      app/locale/zh_CN/CosmoCommerce_Bankcomm.csv
+locale/en_US/CosmoCommerce_Bankcomm.csv      app/locale/en_US/CosmoCommerce_Bankcomm.csv
+CosmoCommerce_Bankcomm.xml                          app/etc/modules/CosmoCommerce_Bankcomm.xml
+skin/bankcomm.css      skin/frontend/base/default/css/bankcomm.css
+skin/bankcomm.js      skin/frontend/base/default/js/bankcomm.js
+skin/bankcomm.jpg      skin/frontend/base/default/images/bankcomm.jpg
+skin/bg_icons.png      skin/frontend/base/default/images/bg_icons.png
+skin/bg_icons_p24.png      skin/frontend/base/default/images/bg_icons_p24.png
