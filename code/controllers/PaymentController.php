@@ -26,7 +26,6 @@ class CosmoCommerce_Bankcomm_PaymentController extends Mage_Core_Controller_Fron
      * Order instance
      */
     protected $_order;
-	protected $_gateway="https://mapi.bankcomm.com/gateway.do?";
 
     /**
      *  Get order
@@ -131,7 +130,6 @@ class CosmoCommerce_Bankcomm_PaymentController extends Mage_Core_Controller_Fron
         );
         $order->save();
 
-        
         $this->getResponse()
         ->setBody($this->getLayout()
         ->createBlock('bankcomm/redirect')

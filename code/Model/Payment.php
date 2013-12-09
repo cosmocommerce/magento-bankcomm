@@ -195,7 +195,6 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
         $tranCode = "cb2200_sign";
 
         $source = "";
-        
         //htmlentities($orderMono,"ENT_QUOTES","GB2312");
         //连接字符串
         $source = $interfaceVersion."|".$merID."|".$orderid."|".$orderDate."|".$orderTime."|".$tranType."|"
