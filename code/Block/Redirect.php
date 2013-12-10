@@ -26,19 +26,9 @@ class CosmoCommerce_Bankcomm_Block_Redirect extends Mage_Core_Block_Abstract
 	protected function _toHtml()
 	{
 		$standard = Mage::getModel('bankcomm/payment');
-        $form = new Varien_Data_Form();
-        $form->setAction($standard->getBankcommUrl())
-            ->setId('bankcomm_payment_checkout')
-            ->setName('bankcomm_payment_checkout')
-            ->setMethod('post')
-            ->setUseContainer(false);
-            
+   
         $fields=$standard->setOrder($this->getOrder())->getStandardCheckoutFormFields();    
-        foreach ($fields as $field => $value) {
-            $form->addField($field, 'hidden', array('name' => $field, 'value' => $value));
-        }
-
-        $formHTML = $form->toHtml();
+       
 
         $html = '<html><body>';
         $html.= $this->__('You will be redirected to Bankcomm in a few seconds.');
