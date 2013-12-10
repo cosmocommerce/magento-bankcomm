@@ -1,0 +1,106 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>商户订单测试</title>
+
+        <meta http-equiv = "Content-Type" content = "text/html; charset=gb2312"/>
+<script language = "javascript" type="text/javascript">
+	function createOrderInfo(){
+		var tmpDate = new Date();
+		var day = tmpDate.getDate();
+		var month= tmpDate.getMonth() + 1 ;
+		var year= tmpDate.getYear();
+    	var hours = tmpDate.getHours()
+    	var minutes = tmpDate.getMinutes()
+    	var seconds = tmpDate.getSeconds()
+    	
+    	month = ((month < 10) ? "0" : "") + month;
+    	day = ((day < 10) ? "0" : "") + day;
+    	hours = ((hours < 10) ? "0" : "") + hours;
+    	minutes = ((minutes < 10) ? "0" : "") + minutes;
+    	seconds = ((seconds < 10) ? "0" : "") + seconds;
+    	
+    	document.all.applyTime.value = year + month + day + hours + minutes + seconds;
+ 		
+	}
+</script>
+    </head>
+
+    <body bgcolor = "#FFFFFF" text = "#000000">
+        <form name = "form1" method = "post" action = "sendSmsPayMsg1.aspx">
+            <p>
+                <input type = "hidden" name = "merCert" value = ""/> 发送短信验证身份
+            </p>
+
+            <table width = "75%" border = "0" cellpadding = "0" cellspacing = "0">
+                
+                <tr>
+                    <td width = "23%">
+                        协议号
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "agreeNo" value = "BOC100000000000499" />
+                        <input type = "submit" id = "Submit" value = "提交" name = "submit" />
+                    </td>
+                </tr>
+
+				<tr>
+                    <td width = "23%">
+                        商户协议检索号
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "merAgreeNo"/>
+                        
+                    </td>
+                </tr>                
+
+                 <tr>
+                    <td width = "23%">
+                        交易金额
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "amount" value = "1"/>
+                        
+                    </td>
+                </tr>
+                
+				<tr>
+                    <td width = "23%">
+                       	申请时间
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "applyTime"/>
+                        <input type = "button" name = "createOrderId" value = "生成时间" onclick = "javascript:createOrderInfo();" />
+                    </td>
+                </tr>                
+				<tr>
+                    <td width = "23%">
+                       	交易渠道
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "netType" value="0"/>
+                        
+                    </td>
+                </tr>                
+                
+                <tr>
+                    <td width = "23%">
+                        &nbsp;
+                    </td>
+
+                    <td width = "77%">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+
+            <p>
+                &nbsp;
+            </p>
+        </form>
+    </body>
+</html>

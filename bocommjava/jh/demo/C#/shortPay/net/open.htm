@@ -1,0 +1,137 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>一键支付签约测试</title>
+
+		<meta http-equiv = "Content-Type" content = "text/html; charset=gb2312"/>
+		
+
+		
+	</head>
+
+	<body bgcolor = "#FFFFFF" text = "#000000">
+		<form name = "form1" method = "post" action = "open.aspx">
+			<p>
+			<input type = "hidden" name = "merCert" value = ""/> 交通银行一键支付签约测试
+			</p>
+
+			<table width = "75%" border = "0" cellpadding = "0" cellspacing = "0">
+				<tr>
+					<td width = "23%">
+						消息版本号*
+					</td>
+
+					<td width = "77%">
+						<input type = "text" name = "interfaceVersion" value = "1.0.0.0"/> <input type = "submit" id = "Submit" value = "提交" name = "submit"/>
+					</td>
+				</tr>
+				 <tr>
+                    <td width = "23%">
+                        协议检索号*
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "merAgreeNo" maxlength = '20' value = "abc"/>
+                    </td>
+                </tr>
+					
+				 <tr>
+                    <td width = "23%">
+                        户名*
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "accName" maxlength = '20' value = "张英"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width = "23%">
+                        证件类型
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "certType" value = "15"/> 15:身份证 17:军人证 18:警官证 19:通行证 20:护照 21:其它 24:回乡证
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width = "23%">
+                        证件号
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "certNo" value = "610100198409228146"/> 
+                    </td>
+                </tr>
+
+				<tr>
+					<td width = "23%" height = "26">
+						商户代码*
+					</td>
+
+					<td width = "77%" height = "26">
+						<input type = "text" name = "merID" maxlength = '15' value = "301310063009501"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td width = "23%">
+						主动通知URL
+					</td>
+
+					<td width = "77%">
+						<input type = "text" name = "notifyURL" value = "" size = "40"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td width = "23%">
+						返回页面URL
+					</td>
+
+					<td width = "77%">
+						<input type = "text" name = "merURL" value = "" size = "40"/>
+					</td>
+				</tr>
+
+				 <tr>
+                    <td width = "23%">
+                        商家备注
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "merComment" value = ""/>
+                    </td>
+                </tr>
+
+				 <tr>
+                    <td width = "23%">
+                        交易类型
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "onekeyTranType" value = "0"/>0:普通 1:实名
+                    </td>
+                </tr>
+
+
+				 <tr>
+                    <td width = "23%">
+                        渠道编号*
+                    </td>
+
+                    <td width = "77%">
+                        <input type = "text" name = "netType" value = "0" /> 0:html渠道
+                        <input type = "hidden" name = "merSignMsg"/>
+                    </td>
+                </tr>
+
+				
+			</table>
+
+			<p>
+			&nbsp;
+			</p>
+		</form>
+	</body>
+</html>

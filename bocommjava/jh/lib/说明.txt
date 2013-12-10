@@ -1,0 +1,3 @@
+bocommapi1.6.0.jar、bocomm-netsign1.8.jar、ISFJ_v2_0_119_2_BAISC_JDK13.jar、ISFJ_v2_0_119_2_BAISC_JDK14.jar、jsse.jar这几个包是需要放到运行环境的ext目录下面去的。
+com版的使用socket_com.jar启动socket。
+php版的使用socket_php.jar启动socket。
