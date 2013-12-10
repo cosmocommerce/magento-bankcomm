@@ -56,10 +56,10 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
     public function logTrans($trans,$type){
 		$log = Mage::getModel('bankcomm/log');
         $log->setLogAt(time());
-        $log->setOrderId(implode('|',$trans));
+        $log->setOrderId($trans);
         $log->setTradeNo(null);
         $log->setType($type);
-        $log->setPostData(implode('|',$trans));
+        $log->setPostData($trans);
         $log->save();
   
     }
@@ -204,6 +204,7 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
 
         //连接地址
         $socketUrl = "tcp://".$socket_ip.":".$socket_port;
+        
         $fp = stream_socket_client($socketUrl, $errno, $errstr, 30);
         $retMsg="";
         //
