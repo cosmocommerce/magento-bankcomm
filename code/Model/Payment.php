@@ -170,7 +170,7 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
            
         $socket_ip = "127.0.0.1";
         $socket_port = "8080";
-        $merchID = "301310063009501"; 
+        $merchID = $this->getConfigData('partner_id'); 
         $interfaceVersion = '1.0.0.0';		
         $merID = $merchID; //商户号为固定	
         $orderid = $order->getRealOrderId();
