@@ -164,8 +164,8 @@ class CosmoCommerce_Bankcomm_Model_Payment extends Mage_Payment_Model_Method_Abs
         if (!($order instanceof Mage_Sales_Model_Order)) {
             Mage::throwException($this->_getHelper()->__('Cannot retrieve order object'));
         } 
-        $logistics_fees=$order->getShippingAmount();
-		$converted_final_price=$order->getGrandTotal()-$logistics_fees;
+        $logistics_fees=$order->getShippingAmount(); //-$logistics_fees
+		$converted_final_price=$order->getGrandTotal();
 		
            
         $socket_ip = "127.0.0.1";
